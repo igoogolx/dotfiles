@@ -1,0 +1,15 @@
+set clipboard+=unnamed
+
+set surround
+set multiple-cursors
+
+onoremap jj <Esc>
+inoremap jj <Esc>
+cnoremap jj <Esc>
+
+map U <C-R>
+map H ^
+map L $
+
+nmap gn gt
+nmap gp gT
