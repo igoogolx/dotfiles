@@ -1,4 +1,5 @@
 set clipboard+=unnamed
+sethandler a:ide
 
 set surround
 set multiple-cursors
