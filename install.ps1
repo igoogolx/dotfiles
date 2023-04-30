@@ -37,11 +37,15 @@ $settingsJson | Out-File $settingsPath -Encoding utf8
 #Install New apps
 Write-Output "Installing Apps"
 $apps = @(
-@{name = "Microsoft.PowerShell" },
 @{name = "Microsoft.VisualStudioCode" },
 @{name = "Microsoft.WindowsTerminal"; source = "msstore" },
 @{name = "Microsoft.PowerToys" },
 @{name = "Git.Git" },
+@{name = "GoLang.Go" },
+@{name = "JetBrains.Toolbox" },
+@{name = "JetBrains.GoLand" },
+@{name = "Google.Chrome" },
+@{name = "7zip.7zip" },
 @{name = "Node.js" }
 );
 Foreach ($app in $apps) {
@@ -60,15 +64,15 @@ Foreach ($app in $apps) {
     }
 }
 
-#Remove Apps
-Write-Output "Removing Apps"
-
-$apps = "*3DPrint*", "Microsoft.MixedReality.Portal"
-Foreach ($app in $apps)
-{
-    Write-host "Uninstalling:" $app
-    Get-AppxPackage -allusers $app | Remove-AppxPackage
-}
+##Remove Apps
+#Write-Output "Removing Apps"
+#
+#$apps = "*3DPrint*", "Microsoft.MixedReality.Portal"
+#Foreach ($app in $apps)
+#{
+#    Write-host "Uninstalling:" $app
+#    Get-AppxPackage -allusers $app | Remove-AppxPackage
+#}
 
 #Setup WSL
 wsl --install
